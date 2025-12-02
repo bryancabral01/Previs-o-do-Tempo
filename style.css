@@ -1,0 +1,207 @@
+:root {
+    --bg-image: url("https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?q=80&w=687&auto=format&fit=crop");
+    --bg-color: #1a1a1a; 
+
+    --input-bg: linear-gradient(45deg,#182848,#4b6cb7);
+    --input-text: white;
+    --placeholder: white;
+
+    --btn-bg1: #4b6cb7;
+    --btn-bg2: #182848;
+    --btn-text: white;
+}
+
+.light {
+    --bg-image: url("https://images.unsplash.com/photo-1563630381190-77c336ea545a?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    --bg-color: white;
+
+    
+    --input-bg: linear-gradient(90deg,#fff, #ffad1f, #ff9500);
+    --input-text: black;
+    --placeholder: black;
+
+    --btn-bg1: #ffffff;
+    --btn-bg2: #ffad1f;
+    --btn-text: black;
+}
+
+body {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: var(--bg-color);
+    background-image: var(--bg-image);
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;  
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);  
+    backdrop-filter: blur(2px);
+    z-index: -1;
+    backdrop-filter: blur(4px);
+    
+}
+
+#switch {
+    display: flex;
+    position: relative;
+    width: 64px;
+    height: 20px;
+    margin: 0px auto;
+}
+
+#switch span {
+    display: block;
+    width: 58px;
+    height: 18px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 9999px;
+}
+
+#switch button {
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    background: black no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.light #switch button {
+    left: 35px;
+    background: white no-repeat center;
+}
+
+#titulo::before {
+    content: "🌦️ Previsão do Tempo 🌦️";
+}
+
+.light #titulo::before {
+    content: "☀️ Previsão do Tempo ☀️";
+    color: white
+}
+
+#dias::before {
+    content: "📅 Previsão Próximos Dias";
+}
+
+.light #dias::before {
+    content: "📅 Previsão Próximos Dias";
+    color: white
+}
+
+#cidade {
+    color: black;
+}
+
+.light #cidade {
+    color: white;
+}
+
+.card{
+    
+    border-radius: 10px;
+    width: 60%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    display: block; 
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 1); 
+}
+
+.card h2{
+    font-size: 1.8rem;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.card p{
+    color: #fcfbfb;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.forecast-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    gap: 40px;
+    margin: 80px auto 80px;
+    max-width: 80%;
+}
+
+.forecast-item {
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+#chartContainer {
+    width: 100%;
+    max-width: 60%; 
+    height: 40vh;    
+    margin: 80px auto 80px;
+}
+
+input {
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+input::placeholder {
+    color: var(--placeholder);
+}
+
+.btn{
+    background: linear-gradient(45deg, var(--btn-bg1), var(--btn-bg2));
+    color: var(--btn-text);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.25);
+}
+
+@media (max-width: 600px) {
+    .filho {
+        font-size: 14px;
+        padding: 8px;
+        flex-direction: column;
+    }
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Previsão do Tempo</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="titulo" style="text-align: center;"></h1>
+
+        <div id="switch" onclick="toggleMode()">
+            <button ></button>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin: 40px auto 40px;">
+            <input type="text" id="cityInput" placeholder="Digite uma cidade">
+            <button class="btn" onclick="buscarClima()">Buscar</button>
+        </div>
+
+        <div class="card">
+            <div id="climaFixo" class="current-weather" style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; margin-bottom: 40px;">
+                <h2 id="cidadeNome" style="text-align: center;">Pesquise uma cidade...</h2>
+                    <p id="tempMax" style="text-align: center;"><strong>🌡️ Máx: --°C</strong></p>
+                    <p id="tempMin" style="text-align: center;"><strong>❄️ Mín: --°C</strong></p>
+            </div>
+            <div id="weatherResult"></div>
+            <div id="map" style="height: 50vh; max-width: 80%; margin: 80px auto 80px; border-radius: 5px;"></div>
+            <div id="chartContainer"><canvas id="tempChart"></canvas></div>
+        </div>
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
